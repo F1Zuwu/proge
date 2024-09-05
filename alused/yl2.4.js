@@ -8,11 +8,15 @@ const rl = readline.createInterface({
 let koht = null;
 let isevmitte = null;
 
+const randomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 rl.question(`Koha valik (ise / loos): `, valik => {
 
     if (valik === "loos") {
         isevmitte = "loosis"
-        const random = Math.random(1,3)
+        const random = randomNumber(1, 3)
         if (random === 1) {
            koht = "aken"
         } else {
